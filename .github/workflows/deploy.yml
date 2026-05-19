@@ -1,41 +1,19 @@
 name: Deploy to GitHub Pages
 
 on:
-<<<<<<< HEAD
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
   push:
-    branches: [ main ]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
+    branches: [master]
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
   pages: write
   id-token: write
-=======
-  push:
-    branches: [master]
->>>>>>> 00138c0224718a80ed7cea361988b3fd4a77e437
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-<<<<<<< HEAD
-      - name: Checkout your repository using git
-        uses: actions/checkout@v6
-      - name: Install, build, and upload your site
-        uses: withastro/action@v6
-        # with:
-          # path: . # The root location of your Astro project inside the repository. (optional)
-          # node-version: 24 # The specific version of Node that should be used to build your site. Defaults to 22. (optional)
-          # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
-          # build-cmd: pnpm run build # The command to run to build your site. Runs the package build script/task by default. (optional)
-        # env:
-          # PUBLIC_POKEAPI: 'https://pokeapi.co/api/v2' # Use single quotation marks for the variable value. (optional)
-=======
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
@@ -45,26 +23,13 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
->>>>>>> 00138c0224718a80ed7cea361988b3fd4a77e437
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-<<<<<<< HEAD
-=======
-    permissions:
-      pages: write
-      id-token: write
->>>>>>> 00138c0224718a80ed7cea361988b3fd4a77e437
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-<<<<<<< HEAD
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
-=======
       - uses: actions/deploy-pages@v4
         id: deployment
->>>>>>> 00138c0224718a80ed7cea361988b3fd4a77e437
