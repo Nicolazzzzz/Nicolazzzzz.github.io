@@ -54,8 +54,14 @@ export const SITE_CONFIG = {
 
 ### 📁 Directory Structure
 ```
+<<<<<<< HEAD
 ├── public/              # Static assets (placeholder.jpg, favicon)
 ├── src/
+=======
+├── public/              # Global static assets (placeholder.jpg, favicon)
+├── src/
+│   ├── assets/          # Project & Profile images (Supports automatic Astro optimization)
+>>>>>>> 00138c0224718a80ed7cea361988b3fd4a77e437
 │   ├── components/      # Reusable Astro components
 │   ├── data/            # JSON files for project data
 │   ├── layouts/         # Layout templates with Meta tags

@@ -1,6 +1,7 @@
 name: Deploy to GitHub Pages
 
 on:
+<<<<<<< HEAD
   # Trigger the workflow every time you push to the `main` branch
   # Using a different branch name? Replace `main` with your branch’s name
   push:
@@ -13,11 +14,16 @@ permissions:
   contents: read
   pages: write
   id-token: write
+=======
+  push:
+    branches: [master]
+>>>>>>> 00138c0224718a80ed7cea361988b3fd4a77e437
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+<<<<<<< HEAD
       - name: Checkout your repository using git
         uses: actions/checkout@v6
       - name: Install, build, and upload your site
@@ -29,14 +35,36 @@ jobs:
           # build-cmd: pnpm run build # The command to run to build your site. Runs the package build script/task by default. (optional)
         # env:
           # PUBLIC_POKEAPI: 'https://pokeapi.co/api/v2' # Use single quotation marks for the variable value. (optional)
+=======
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+>>>>>>> 00138c0224718a80ed7cea361988b3fd4a77e437
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+<<<<<<< HEAD
+=======
+    permissions:
+      pages: write
+      id-token: write
+>>>>>>> 00138c0224718a80ed7cea361988b3fd4a77e437
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+<<<<<<< HEAD
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+=======
+      - uses: actions/deploy-pages@v4
+        id: deployment
+>>>>>>> 00138c0224718a80ed7cea361988b3fd4a77e437
