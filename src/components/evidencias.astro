@@ -3,7 +3,7 @@ const categories = [
   {
     slug: 'sql',
     label: 'SQL',
-    desc: 'Consultas, joins, vistas y más',
+    desc: 'Consultas, joins, vistas y mas',
   },
   {
     slug: 'plsql',
@@ -34,21 +34,17 @@ const categories = [
 
   <div class="grid grid-cols-2 gap-4 max-w-2xl reveal-content" style="animation-delay: 200ms;">
     {categories.map((cat) => (
-      
-        href={"/evidencias/" + cat.slug}
-        class="group relative block p-px rounded-xl border border-accent/20 bg-background/50 hover:border-accent/60 transition-all duration-300"
-      >
+      <a href={"/evidencias/" + cat.slug} class="group relative block p-px rounded-xl border border-accent/20 bg-background/50 hover:border-accent/60 transition-all duration-300">
         <div class="relative h-24 flex items-center justify-center text-center overflow-hidden rounded-xl px-4">
           <div class="flex flex-col items-center justify-center h-full transition-all duration-300 group-hover:scale-90 group-hover:opacity-0">
             <h3 class="text-sm sm:text-base font-bold text-maintext">{cat.label}</h3>
             <p class="text-xs text-gray mt-1">{cat.desc}</p>
           </div>
           <div class="absolute inset-0 flex items-center justify-center translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-            <span class="text-sm font-bold text-accent uppercase tracking-wider">Ver →</span>
+            <span class="text-sm font-bold text-accent uppercase tracking-wider">Ver</span>
           </div>
         </div>
       </a>
     ))}
   </div>
-  
 </section>
