@@ -16,15 +16,17 @@
       "skills": [
         { "name": "Java", "level": 3, "icon": "skill-icons:java-dark" },
         { "name": "Spring Boot", "level": 3, "icon": "skill-icons:spring-dark" },
+        { "name": "REST APIs", "level": 3, "icon": "skill-icons:postman" },
         { "name": "TypeScript", "level": 2, "icon": "skill-icons:typescript" },
-        { "name": "Python", "level": 2, "icon": "skill-icons:python-dark" }
+        { "name": "Python", "level": 2, "icon": "skill-icons:python-dark" },
+        { "name": "Git", "level": 2, "icon": "skill-icons:git" }
       ]
     },
     {
       "title": "Database",
       "skills": [
         { "name": "MySQL", "level": 3, "icon": "skill-icons:mysql-dark" },
-        { "name": "Oracle", "level": 2, "icon": "skill-icons:oracle-dark" },
+        { "name": "Oracle", "level": 2, "icon": "skill-icons:postgresql-dark" },
         { "name": "MongoDB", "level": 1, "icon": "skill-icons:mongodb" }
       ]
     }
