@@ -1,26 +1,34 @@
 [
   {
-    "company": "Demo Company",
-    "role": "Lead Software Engineer",
-    "period": "Oct 2025 - Present",
-    "type": "Full time job",
-    "description": "Leading cross-platform mobile development using Flutter and FastAPI. Focused on scalable system design and high-performance data processing.",
-    "skills": ["Leading", "Collaboration"]
-  },
-  {
-    "company": "Demo Company",
-    "role": "Full-stack Developer",
-    "period": "Sep 2023 - Sep 2025",
-    "type": "Full time job",
-    "description": "Specializing in Business Research Methods and Strategic HRM. Applying analytical frameworks to human capital management.",
-    "skills": ["React", "Node.js", "PostgreSQL", "Docker"]
-  },
-  {
-    "company": "Demo University of Tech",
-    "role": "BSc in Computer Science",
-    "period": "Jun 2020 - Jun 2024",
+    "company": "El Bosque University",
+    "role": "Systems Engineering Student",
+    "period": "2023 - Present",
     "type": "Student",
-    "description": "Specializing in Business Research Methods and Strategic HRM. Applying analytical frameworks to human capital management.",
-    "skills": ["C++", "OOP", "Problem Solving"]
+    "description": "Currently in my 5th semester. Relevant coursework: Programming II, Algorithmic Complexity, Databases.",
+    "skills": ["Java", "Python", "MySQL", "Git"]
+  },
+  {
+    "company": "El Bosque University",
+    "role": "Project Manager – Pizzatron 3000",
+    "period": "Aug 2024 - Nov 2024",
+    "type": "Academic Project",
+    "description": "Led a team of 6 students to recreate the Pizzatron 3000 game from Club Penguin using object-oriented programming in Java. Applied agile methodologies, Git version control, and basic UI design principles.",
+    "skills": ["Java", "OOP", "Git", "Agile"]
+  },
+  {
+    "company": "Personal Project",
+    "role": "C++ Practice Developer",
+    "period": "Jan 2024 - Jul 2024",
+    "type": "Personal Project",
+    "description": "Developed console-based applications to apply OOP and data structures. Implemented sorting algorithms and file-handling operations. Used Visual Studio Code and Git for debugging and version control.",
+    "skills": ["C++", "OOP", "Data Structures", "Git"]
+  },
+  {
+    "company": "SENA",
+    "role": "Technical Degree – Computer Equipment Maintenance",
+    "period": "Graduated Dec 2023",
+    "type": "Education",
+    "description": "Technical certification in computer equipment maintenance and repair from the Servicio Nacional de Aprendizaje (SENA), Paz de Ariporo, Casanare.",
+    "skills": ["Hardware", "Maintenance", "Repair"]
   }
 ]
