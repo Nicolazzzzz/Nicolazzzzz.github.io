@@ -1,27 +1,110 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import EvidenceCard from '../../components/EvidenceCard.astro';
-import { evidencias } from '../../data/evidencias';
 
-const data = evidencias.sql;
+const scripts: {
+  title: string;
+  file: string;
+  description: string;
+  code: string;
+}[] = [
+  // Agrega tus scripts aquí con este formato:
+  // {
+  //   title: 'Nombre del script',
+  //   file: '/scripts/sql/mi-script.sql',
+  //   description: 'Breve descripción',
+  //   code: `-- Tu código SQL aquí`
+  // },
+];
 ---
 
-<Layout title="SQL Evidence">
-  <section class="section-container py-20">
-    <div class="mb-10">
-      <h1 class="text-5xl font-bold text-maintext">
-        SQL
-      </h1>
+<Layout title="SQL | Evidencias | Nicolazzz">
+  <main class="min-h-screen section-container pt-32 pb-16">
+    <article class="max-w-3xl mx-auto">
 
-      <p class="text-gray mt-3">
-        Advanced SQL workshops and relational database exercises.
-      </p>
-    </div>
+      <a
+        href="/evidencias"
+        class="text-sm font-body text-gray hover:text-maintext transition-colors mb-8 inline-block"
+      >
+        ← Volver a Evidencias
+      </a>
 
-    <div class="grid md:grid-cols-2 gap-6">
-      {data.map((item) => (
-        <EvidenceCard item={item} />
-      ))}
-    </div>
-  </section>
+      <header class="mb-12">
+        <p class="text-xs font-medium text-gray uppercase tracking-wider mb-3">Scripts</p>
+        <h1 class="text-4xl sm:text-5xl font-heading font-bold text-maintext mb-4">SQL</h1>
+        <p class="text-lg text-gray font-body">
+          Colección de scripts SQL: consultas, joins, subconsultas, vistas y más.
+        </p>
+      </header>
+
+      {scripts.length === 0 ? (
+        <div class="flex flex-col items-center justify-center py-24 text-center border border-dashed border-accent/30 rounded-2xl">
+          <span class="text-4xl mb-4">🗄️</span>
+          <p class="text-gray font-body text-sm">
+            Aún no hay scripts. Se irán agregando progresivamente.
+          </p>
+        </div>
+      ) : (
+        <div class="space-y-4">
+          {scripts.map((script, i) => (
+            <div class="border border-accent/20 rounded-xl overflow-hidden bg-background/50 script-card">
+              <div
+                class="flex items-center justify-between p-4 sm:p-5 cursor-pointer select-none script-toggle"
+                data-index={i}
+              >
+                <div class="flex-1 min-w-0">
+                  <h3 class="text-sm sm:text-base font-semibold text-maintext">{script.title}</h3>
+                  <p class="text-xs text-gray mt-0.5">{script.description}</p>
+                </div>
+                <div class="flex items-center gap-2 ml-3 shrink-0">
+                  <a
+                    href={script.file}
+                    download
+                    class="px-3 py-1.5 text-xs font-medium rounded-full bg-accent text-background hover:opacity-80 transition-all"
+                    onclick="event.stopPropagation()"
+                  >
+                    Descargar
+                  </a>
+                  <button class="px-3 py-1.5 text-xs font-medium rounded-full border border-accent/30 text-gray hover:text-maintext hover:border-accent/60 transition-colors view-btn">
+                    Ver código
+                  </button>
+                  <svg class="w-4 h-4 text-gray transition-transform duration-300 chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
+              <div class="code-panel hidden">
+                <div class="border-t border-accent/20">
+                  <pre class="overflow-x-auto p-4 sm:p-5 text-xs sm:text-sm leading-relaxed text-maintext font-mono bg-background/80"><code>{script.code}</code></pre>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+    </article>
+  </main>
 </Layout>
+
+<script>
+  document.querySelectorAll('.script-toggle').forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      const card = toggle.closest('.script-card');
+      if (!card) return;
+      const panel = card.querySelector('.code-panel');
+      const chevron = card.querySelector('.chevron');
+      const btn = card.querySelector('.view-btn');
+      if (!panel || !chevron || !btn) return;
+      const isOpen = !panel.classList.contains('hidden');
+      if (isOpen) {
+        panel.classList.add('hidden');
+        (chevron as HTMLElement).style.transform = '';
+        btn.textContent = 'Ver código';
+      } else {
+        panel.classList.remove('hidden');
+        (chevron as HTMLElement).style.transform = 'rotate(180deg)';
+        btn.textContent = 'Ocultar código';
+      }
+    });
+  });
+</script>
