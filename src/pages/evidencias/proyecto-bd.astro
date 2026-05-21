@@ -13,7 +13,18 @@ The database architecture uses MySQL as the primary transactional engine, ensuri
     "MUI v7", "Recharts", "Framer Motion", "Maven"
   ],
   repoURL: "https://github.com/EstebanC06/CocoTechSystems",
-  images: [] as string[],
+  images: [
+    "../../proyecto-bd/BD1.png",
+    "../../proyecto-bd/BD2.png",
+    "../../proyecto-bd/BD3.png",
+    "../../proyecto-bd/BD4.png",
+    "../../proyecto-bd/BD5.png",
+    "../../proyecto-bd/BD6.png",
+    "../../proyecto-bd/BD7.png",
+    "../../proyecto-bd/BD8.png",
+    "../../proyecto-bd/BD9.png",
+    "../../proyecto-bd/BD10.png",
+  ],
 };
 ---
 
@@ -77,20 +88,13 @@ The database architecture uses MySQL as the primary transactional engine, ensuri
         <!-- Gallery -->
         <section>
           <h2 class="text-xs font-medium text-gray uppercase tracking-wider mb-4">Gallery</h2>
-          {project.images.length > 0 ? (
-            <div class="grid grid-cols-1 gap-8">
-              {project.images.map((src) => (
-                <div class="relative rounded-2xl overflow-hidden border border-accent/20">
-                  <img src={src} alt="Project screenshot" class="w-full h-auto" loading="lazy" />
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div class="flex flex-col items-center justify-center py-16 text-center border border-dashed border-accent/30 rounded-2xl">
-              <span class="text-4xl mb-4">🖼️</span>
-              <p class="text-gray font-body text-sm">Screenshots will be added when available.</p>
-            </div>
-          )}
+          <div class="grid grid-cols-1 gap-8">
+            {project.images.map((src) => (
+              <div class="relative rounded-2xl overflow-hidden border border-accent/20">
+                <img src={src} alt="Project screenshot" class="w-full h-auto" loading="lazy" />
+              </div>
+            ))}
+          </div>
         </section>
 
       </div>
