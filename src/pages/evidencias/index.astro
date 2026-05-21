@@ -5,44 +5,49 @@ const categories = [
   {
     slug: 'sql',
     label: 'SQL',
-    desc: 'Consultas, joins, vistas y más',
+    desc: 'Queries, joins, views and more',
   },
   {
     slug: 'plsql',
     label: 'PL/SQL',
-    desc: 'Procedimientos, funciones y triggers',
+    desc: 'Procedures, functions and triggers',
   },
   {
     slug: 'nosql',
     label: 'NoSQL',
-    desc: 'MongoDB, Redis y bases de datos documentales',
+    desc: 'MongoDB, Redis and document databases',
   },
   {
     slug: 'proyecto-bd',
-    label: 'Proyecto BD',
-    desc: 'Proyecto final de bases de datos',
+    label: 'DB Project',
+    desc: 'Final database project',
   },
 ];
 ---
 
-<Layout title="Evidencias | Nicolazzz">
+<Layout title="Evidence | Nicolazzz">
   <main class="min-h-screen section-container pt-32 pb-16">
+
+    <a href="/" class="text-sm font-body text-gray hover:text-maintext transition-colors mb-8 inline-block">
+      ← Back to Home
+    </a>
+
     <div class="max-w-2xl mb-12">
       <p class="text-xs font-medium text-gray uppercase tracking-wider mb-3">
-        Trabajos Seleccionados
+        Selected Work
       </p>
       <h1 class="text-4xl md:text-5xl font-heading font-bold text-maintext">
-        Evidencias
+        Evidence
       </h1>
       <p class="mt-4 text-lg text-gray font-body">
-        Algunos ejercicios que demuestran mis habilidades en Bases de Datos
+        A selection of exercises showcasing my database skills
       </p>
     </div>
 
     <div class="grid grid-cols-2 gap-4 max-w-2xl">
       {categories.map((cat) => (
-        <a
-          href={`/evidencias/${cat.slug}`}
+        
+          href={"/evidencias/" + cat.slug}
           class="group relative block p-px rounded-xl border border-accent/20 bg-background/50 hover:border-accent/60 transition-all duration-300"
         >
           <div class="relative h-24 flex items-center justify-center text-center overflow-hidden rounded-xl px-4">
@@ -54,7 +59,7 @@ const categories = [
             </div>
             <div class="absolute inset-0 flex items-center justify-center translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
               <span class="text-sm font-bold text-accent uppercase tracking-wider">
-                Ver →
+                View →
               </span>
             </div>
           </div>
