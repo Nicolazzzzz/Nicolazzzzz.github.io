@@ -9,8 +9,8 @@ const project = {
 The database architecture uses MySQL as the primary transactional engine, ensuring data consistency and integrity (ACID), while MongoDB takes on the read-heavy workload — powering dashboards, reports, and invoice history without expensive join operations. Two MongoDB modeling strategies were applied: Extended Reference to embed invoice snapshots at the time of sale, and Computed to store pre-aggregated monthly metrics per branch. Authentication is handled through stateless JWT tokens with three distinct roles (Admin, Employee, and Client), and includes a password reset flow via email verification code.`,
   stack: [
     "Java 21", "Spring Boot 3.3.5", "MySQL 8", "MongoDB 7",
-    "Spring Security + JWT", "React 19", "TypeScript", "Vite 6",
-    "MUI v7", "Recharts", "Framer Motion", "Maven"
+    "Spring Security + JWT", "React 19", "TypeScript",
+    "Recharts", "Framer Motion", "Maven"
   ],
   repoURL: "https://github.com/EstebanC06/CocoTechSystems",
   images: [
