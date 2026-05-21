@@ -4,9 +4,9 @@ import Layout from '../../layouts/Layout.astro';
 const project = {
   title: "CocoTechSystems",
   subtitle: "Final Database Project",
-  description: `CocoTechSystems is a full-stack supermarket management platform that combines a physical point-of-sale (POS) system with an e-commerce store in a single solution. It supports multi-detail sales, automatic invoice generation, end-to-end online order management (RECEIVED → PREPARING → ON_THE_WAY → DELIVERED), and administration of clients, employees, branches, and product catalog.
+  description: `CocoTechSystems is a full-stack platform designed to manage a supermarket chain, integrating a physical point-of-sale system and an online store into a unified solution. It handles sales with multiple line items, automated invoicing, and tracks online orders through every stage of the fulfillment process. It also centralizes the management of customers, staff, branches, and product inventory.
 
-MySQL acts as the transactional source of truth (ACID), while MongoDB handles the read-intensive layer serving reports, dashboards, and invoice history without costly JOINs. The system implements two MongoDB design patterns: Extended Reference for invoices with historical snapshots, and Computed for pre-calculated monthly reports per branch. Security is stateless with JWT and role-based access (ADMIN, EMPLOYEE, CLIENT), including password recovery via SMTP email code.`,
+The database architecture uses MySQL as the primary transactional engine, ensuring data consistency and integrity (ACID), while MongoDB takes on the read-heavy workload — powering dashboards, reports, and invoice history without expensive join operations. Two MongoDB modeling strategies were applied: Extended Reference to embed invoice snapshots at the time of sale, and Computed to store pre-aggregated monthly metrics per branch. Authentication is handled through stateless JWT tokens with three distinct roles (Admin, Employee, and Client), and includes a password reset flow via email verification code.`,
   stack: [
     "Java 21", "Spring Boot 3.3.5", "MySQL 8", "MongoDB 7",
     "Spring Security + JWT", "React 19", "TypeScript", "Vite 6",
